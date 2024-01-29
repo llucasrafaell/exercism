@@ -1,6 +1,7 @@
 public class ElonsToyCar {
+
     public static ElonsToyCar buy() {
-        throw new UnsupportedOperationException("Please implement the (static) RemoteControlCar.buy()  method");
+       return new ElonsToyCar();
     }
 
     public String distanceDisplay() {
@@ -15,3 +16,4 @@ public class ElonsToyCar {
         throw new UnsupportedOperationException("Please implement the RemoteControlCar.drive()  method");
     }
 }
+
