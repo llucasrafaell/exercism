@@ -74,7 +74,7 @@ public class RemoteControlCarTest {
     @Tag("task:4")
     @DisplayName("The getRankedCars returns a list of two cars sorted by number of victories")
     public void rankTwoCars() {
-        List<ProductionRemoteControlCar> unsortedCars = new ArrayList<>() {
+        List<ProductionRemoteControlCar> unsortedCars = new ArrayList<ProductionRemoteControlCar>() {
             {
                 add(getCarWithVictories(2));
                 add(getCarWithVictories(3));
@@ -89,7 +89,7 @@ public class RemoteControlCarTest {
     @Tag("task:4")
     @DisplayName("The getRankedCars returns a list of multiple cars sorted by number of victories")
     public void rankManyCars() {
-        List<ProductionRemoteControlCar> unsortedCars = new ArrayList<>() {
+        List<ProductionRemoteControlCar> unsortedCars = new ArrayList<ProductionRemoteControlCar>() {
             {
                 add(getCarWithVictories(0));
                 add(getCarWithVictories(3));
