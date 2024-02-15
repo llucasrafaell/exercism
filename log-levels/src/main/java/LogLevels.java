@@ -22,10 +22,12 @@ public class LogLevels {
         }
         else
             return logLine;
-
     }
 
     public static String reformat(String logLine) {
-        throw new UnsupportedOperationException("Please implement the (static) LogLine.reformat() method");
+        String getLogLevel = logLevel(logLine);
+        String getLog = message(logLine);
+        String message = getLog + " (" + getLogLevel + ")";
+        return message;
     }
 }
