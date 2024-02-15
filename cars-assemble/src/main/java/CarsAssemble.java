@@ -1,16 +1,18 @@
 public class CarsAssemble {
 
-    int defaultVelocity = 221;
+    private final static int HOURLY_PRODUCTION_RATE = 221;
+    private final static int MIN_VELOCITY = 0;
+    private final static int MAX_VELOCITY = 10;
 
     public double productionRatePerHour(int speed) {
         if (velocityValid(speed)){
-            return speed * defaultVelocity * successRate(speed);
+            return speed * HOURLY_PRODUCTION_RATE * successRate(speed);
         } 
         return 0.0;
     }
 
     public int workingItemsPerMinute(int speed) {
-        double carsPerMinute = (defaultVelocity * successRate(speed)) / 60 ;
+        double carsPerMinute = (HOURLY_PRODUCTION_RATE * successRate(speed)) / 60 ;
 
         if(velocityValid(speed))
             return (int)(carsPerMinute * speed);
@@ -18,7 +20,7 @@ public class CarsAssemble {
     }
 
     public boolean velocityValid (int speed){
-        if (speed >=0 && speed <= 10)
+        if (speed >= MIN_VELOCITY && speed <= MAX_VELOCITY)
             return true;
         else 
             return false;
