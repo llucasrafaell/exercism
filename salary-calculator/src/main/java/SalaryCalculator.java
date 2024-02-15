@@ -1,4 +1,8 @@
 public class SalaryCalculator {
+
+    private final static double BASE_SALARY = 1000.00;
+    private final static double MAX_SALARY = 2000.00;
+
     public double salaryMultiplier(int daysSkipped) {
         return daysSkipped > 4 ? 0.85 : 1.0;
     }
@@ -12,6 +16,7 @@ public class SalaryCalculator {
     }
 
     public double finalSalary(int daysSkipped, int productsSold) {
-        throw new UnsupportedOperationException("Please implement the SalaryCalculator.finalSalary() method");
+        double salary = (BASE_SALARY + bonusForProductsSold(productsSold)) * salaryMultiplier(daysSkipped);
+        return salary >= MAX_SALARY ? MAX_SALARY : salary;  
     } 
 }
