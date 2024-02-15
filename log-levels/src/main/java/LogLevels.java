@@ -13,7 +13,16 @@ public class LogLevels {
     }
 
     public static String logLevel(String logLine) {
-        throw new UnsupportedOperationException("Please implement the (static) LogLine.logLevel() method");
+        int indexIn = logLine.indexOf("[");
+        int indexOut = logLine.indexOf("]", indexIn);
+
+        if (indexIn != -1 && indexOut != -1){
+            String message = logLine.substring(indexIn+1, indexOut).toLowerCase().trim();
+            return message;
+        }
+        else
+            return logLine;
+
     }
 
     public static String reformat(String logLine) {
